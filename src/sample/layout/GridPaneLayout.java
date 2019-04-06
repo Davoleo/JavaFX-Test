@@ -9,6 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import sample.box.SimpleAlertBox;
 
 /*************************************************
  * Author: Davoleo
@@ -45,6 +46,7 @@ public class GridPaneLayout extends Application {
 
         //Login button
         Button loginButton = new Button("LOGIN");
+        loginButton.setOnAction(e -> SimpleAlertBox.display("Login Program", "Welcome " + textboxUser.getText()));
         GridPane.setConstraints(loginButton, 1, 2);
 
         grid.getChildren().addAll(labelPW, labelUser, textboxPW, textboxUser, loginButton);

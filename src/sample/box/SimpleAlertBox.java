@@ -23,8 +23,11 @@ public class SimpleAlertBox {
         Stage window = new Stage();
 
         window.initModality(Modality.APPLICATION_MODAL);
+        //window.initStyle(StageStyle.UTILITY);
         window.setTitle(title);
         window.setMinWidth(250);
+        window.setMinHeight(100);
+        window.setResizable(false);
 
         Label label = new Label(message);
         Button button = new Button("Close");
