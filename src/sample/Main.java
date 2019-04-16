@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -20,7 +22,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
         buttonAlert = new Button("AlertBox");
         buttonAlert.setOnAction(event -> SimpleAlertBox.display("SampleAlertBox", "WELCOME TO THE MALFORMED BOX!"));
@@ -33,13 +35,14 @@ public class Main extends Application {
                 Util.closeProgram(primaryStage);
         });
 
-        VBox layout = new VBox(3);
-        layout.getChildren().addAll(buttonAlert, buttonConfirm);
-
         primaryStage.setOnCloseRequest(event -> {
             event.consume();
             Util.closeProgram(primaryStage);
         });
+
+        VBox layout = new VBox(3);
+        layout.getChildren().addAll(buttonAlert, buttonConfirm);
+
         primaryStage.setTitle("Main JavaFX");
         primaryStage.setScene(new Scene(layout, 300, 275));
         primaryStage.show();

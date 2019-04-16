@@ -48,6 +48,7 @@ public class ConfirmBox {
         layout.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(layout);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.showAndWait();
 
