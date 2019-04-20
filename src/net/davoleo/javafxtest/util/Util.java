@@ -1,7 +1,7 @@
-package sample.util;
+package net.davoleo.javafxtest.util;
 
 import javafx.stage.Stage;
-import sample.box.ConfirmBox;
+import net.davoleo.javafxtest.box.ConfirmBox;
 
 /*************************************************
  * Author: Davoleo

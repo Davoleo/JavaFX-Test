@@ -1,4 +1,4 @@
-package sample.control;
+package net.davoleo.javafxtest.control;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sample.box.SimpleAlertBox;
+import net.davoleo.javafxtest.box.SimpleAlertBox;
 
 /*************************************************
  * Author: Davoleo

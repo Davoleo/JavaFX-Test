@@ -1,4 +1,4 @@
-package sample.layout;
+package net.davoleo.javafxtest.layout;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -9,7 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import sample.box.SimpleAlertBox;
+import net.davoleo.javafxtest.box.SimpleAlertBox;
 
 /*************************************************
  * Author: Davoleo

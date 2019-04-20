@@ -1,4 +1,4 @@
-package sample.layout;
+package net.davoleo.javafxtest.layout;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

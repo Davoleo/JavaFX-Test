@@ -1,4 +1,4 @@
-package sample.scenes;
+package net.davoleo.javafxtest.scenes;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

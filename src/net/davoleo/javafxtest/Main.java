@@ -1,4 +1,4 @@
-package sample;
+package net.davoleo.javafxtest;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,9 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sample.box.ConfirmBox;
-import sample.box.SimpleAlertBox;
-import sample.util.Util;
+import net.davoleo.javafxtest.box.ConfirmBox;
+import net.davoleo.javafxtest.box.SimpleAlertBox;
+import net.davoleo.javafxtest.util.Util;
 
 /**
  * In JavaFX:

@@ -1,4 +1,4 @@
-package sample.control;
+package net.davoleo.javafxtest.control;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;

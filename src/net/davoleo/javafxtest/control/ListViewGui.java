@@ -1,4 +1,4 @@
-package sample.control;
+package net.davoleo.javafxtest.control;
 
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -9,7 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sample.box.SimpleAlertBox;
+import net.davoleo.javafxtest.box.SimpleAlertBox;
 
 /*************************************************
  * Author: Davoleo

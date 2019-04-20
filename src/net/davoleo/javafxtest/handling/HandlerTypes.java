@@ -1,4 +1,4 @@
-package sample.handling;
+package net.davoleo.javafxtest.handling;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

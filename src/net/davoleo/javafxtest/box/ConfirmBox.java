@@ -1,4 +1,4 @@
-package sample.box;
+package net.davoleo.javafxtest.box;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
