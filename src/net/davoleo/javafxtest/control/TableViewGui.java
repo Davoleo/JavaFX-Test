@@ -5,11 +5,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import net.davoleo.javafxtest.box.SimpleAlertBox;
 
 /*************************************************
  * Author: Davoleo
@@ -22,6 +26,7 @@ import javafx.stage.Stage;
 public class TableViewGui extends Application {
 
     private TableView<Product> productsTable;
+    TextField nameIn, priceIn, quantityIn;
 
     public static void main(String[] args)
     {
@@ -46,16 +51,37 @@ public class TableViewGui extends Application {
         quantityColumn.setMinWidth(100);
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
+        //Input init
+        nameIn = new TextField();
+        nameIn.setPromptText("Product Name");
+        nameIn.setMinWidth(100);
+        priceIn = new TextField();
+        priceIn.setPromptText("Product Price");
+        quantityIn = new TextField();
+        quantityIn.setPromptText("Product Quantity");
+
+        //Button
+        Button addButton = new Button("Add");
+        addButton.setOnAction(event -> addEntry());
+        Button deleteButton = new Button("Delete");
+        deleteButton.setOnAction(event -> removeEntry());
+
+        HBox controlsBox = new HBox();
+        controlsBox.setPadding(new Insets(8));
+        controlsBox.setSpacing(8);
+        controlsBox.getChildren().addAll(nameIn, priceIn, quantityIn, addButton, deleteButton);
+
         productsTable = new TableView<>();
         productsTable.setItems(createProductsList());
         productsTable.getColumns().addAll(nameColumn, priceColumn, quantityColumn);
 
 
         VBox layout = new VBox(5);
-        layout.setPadding(new Insets(10));
+        layout.setPadding(new Insets(0));
         layout.getChildren().add(productsTable);
+        layout.getChildren().add(controlsBox);
 
-        Scene scene = new Scene(layout, 500, 250);
+        Scene scene = new Scene(layout, 587, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -74,6 +100,53 @@ public class TableViewGui extends Application {
                 new Product("Corn", 1.49, 856)
         );
         return products;
+    }
+
+    private void addEntry()
+    {
+        Product product = new Product();
+        boolean isValid = true;
+
+        if (!nameIn.getText().isEmpty())
+            product.setName(nameIn.getText());
+        else
+        {
+            SimpleAlertBox.display("Error", "You cannot leave the name field empty");
+            isValid = false;
+        }
+
+        try {
+            product.setPrice(Double.parseDouble(priceIn.getText()));
+            product.setQuantity(Integer.parseInt(quantityIn.getText()));
+        }
+        catch (NumberFormatException e) {
+            SimpleAlertBox.display("Error", "The formats of price and/or quantity fields are invalid");
+            isValid = false;
+        }
+
+        if (isValid)
+        {
+            productsTable.getItems().add(product);
+            nameIn.clear();
+            priceIn.clear();
+            quantityIn.clear();
+        }
+    }
+
+    private void removeEntry()
+    {
+        ObservableList<Product> products, selectedProducts;
+        products = productsTable.getItems();
+        selectedProducts = productsTable.getSelectionModel().getSelectedItems();
+
+//        for (Product product : productsTable.getItems())
+//        {
+//            if (product.equals(productsTable.getSelectionModel().getSelectedItem()))
+//                productsTable.getItems().remove(product);
+//        }
+
+        selectedProducts.forEach(products::removeAll);
+
     }
 
 
