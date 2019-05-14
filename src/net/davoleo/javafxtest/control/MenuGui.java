@@ -2,10 +2,7 @@ package net.davoleo.javafxtest.control;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -60,12 +57,25 @@ public class MenuGui extends Application {
 
         editMenu.getItems().addAll(new MenuItem("Cut"), new MenuItem("Copy"), new MenuItem("Paste"), undo);
 
+        //Help Menu
+        Menu helpMenu = new Menu("_Help");
+        CheckMenuItem showLines = new CheckMenuItem("Show Line Numbers");
+        showLines.setOnAction(event -> {
+            if (showLines.isSelected())
+                System.out.println("Line Numbers Enabled");
+            else
+                System.out.println("Line Numbers Disabled");
+        });
 
+        CheckMenuItem autoSave = new CheckMenuItem("AutoSave");
+        autoSave.setSelected(true);
+        helpMenu.getItems().addAll(showLines, autoSave);
 
         //MenuBar
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().add(fileMenu);
         menuBar.getMenus().add(editMenu);
+        menuBar.getMenus().add(helpMenu);
 
         BorderPane layout = new BorderPane();
         layout.setTop(menuBar);
