@@ -71,10 +71,25 @@ public class MenuGui extends Application {
         autoSave.setSelected(true);
         helpMenu.getItems().addAll(showLines, autoSave);
 
+        //Mode Menu
+        Menu modeMenu = new Menu("_Mode");
+
+        ToggleGroup modes = new ToggleGroup();
+        RadioMenuItem designerMode = new RadioMenuItem("Designer Mode");
+        RadioMenuItem editorMode = new RadioMenuItem("Editor Mode");
+        RadioMenuItem rendererMode = new RadioMenuItem("Renderer Mode");
+        RadioMenuItem debugMode = new RadioMenuItem("Debug Mode");
+
+        modes.getToggles().addAll(designerMode, editorMode, rendererMode, debugMode);
+        designerMode.setSelected(true);
+
+        modeMenu.getItems().addAll(designerMode, editorMode, rendererMode, debugMode);
+
         //MenuBar
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().add(fileMenu);
         menuBar.getMenus().add(editMenu);
+        menuBar.getMenus().add(modeMenu);
         menuBar.getMenus().add(helpMenu);
 
         BorderPane layout = new BorderPane();
