@@ -36,6 +36,7 @@ public class GridPaneLayout extends Application {
         GridPane.setConstraints(labelUser, 0, 0);
         TextField textboxUser = new TextField("Davoleo");
         GridPane.setConstraints(textboxUser, 1, 0);
+        labelUser.setId("bold-label");
 
         //Password
         Label labelPW = new Label("Password:");
@@ -49,9 +50,15 @@ public class GridPaneLayout extends Application {
         loginButton.setOnAction(e -> SimpleAlertBox.display("Login Program", "Welcome " + textboxUser.getText()));
         GridPane.setConstraints(loginButton, 1, 2);
 
-        grid.getChildren().addAll(labelPW, labelUser, textboxPW, textboxUser, loginButton);
+        //Sign Up
+        Button signupButton = new Button("SIGN UP");
+        GridPane.setConstraints(signupButton, 1, 3);
+        signupButton.getStyleClass().add("button-custom");
+
+        grid.getChildren().addAll(labelPW, labelUser, textboxPW, textboxUser, loginButton, signupButton);
 
         Scene scene = new Scene(grid, 300, 200);
+        scene.getStylesheets().add("net/davoleo/javafxtest/stylesheets/theme.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
