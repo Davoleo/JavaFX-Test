@@ -1,6 +1,8 @@
 package net.davoleo.javafxtest.handling;
 
 import javafx.application.Application;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -22,6 +24,16 @@ public class PropertiesGui extends Application {
         primaryStage.setTitle("Properties");
 
         Person davoleo = new Person();
+
+        IntegerProperty x = new SimpleIntegerProperty(3);
+        IntegerProperty y = new SimpleIntegerProperty();
+
+        //Y always depends from x being its value multiplied by 10
+        y.bind(x.multiply(10));
+        System.out.println(x.getValue() + " --- " + y.getValue());
+
+        x.setValue(9);
+        System.out.println(x.getValue() + " --- " + y.getValue());
 
         davoleo.firstNameProperty().addListener((observable, oldValue, newValue) -> {
             System.out.println("Name changed to: " + newValue);
