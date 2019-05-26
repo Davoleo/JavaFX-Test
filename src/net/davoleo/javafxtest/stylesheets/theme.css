@@ -8,18 +8,21 @@
     -fx-text-fill: #e8e8e8;
 }
 
+/* Applies rules to all the elements of the class "Button" */
 .button {
     -fx-background-color: linear-gradient(#A1B56C, #86C1B9);
     -fx-text-fill: #000000;
     -fx-background-radius: 4;
 }
 
+/* Custom Assignable class */
 .button-custom {
     -fx-background-color: #AB4642;
     -fx-text-fill: #FFFFFF;
     -fx-background-radius: 4;
 }
 
+/* Custom Assignable class */
 #bold-label {
     -fx-font-weight: bold;
 }
