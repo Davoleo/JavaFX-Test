@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ^^^ Default language version and encoding-->
+
+<!-- Binds the java class (Controller), sets the prefHeight and prefWidth of the window -->
+<!-- Every FXML File has one only controller-->
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="net.davoleo.javafxtest.fxml.sample1.Controller" prefHeight="400.0" prefWidth="600.0">
+
+<!--  Controls -->
+    <Label>Hello World!</Label>
+    <Label text="Hello Label2"/>
+    <Button fx:id="button" onAction="#handleButtonClick">Click Me</Button>
+
+</VBox>
