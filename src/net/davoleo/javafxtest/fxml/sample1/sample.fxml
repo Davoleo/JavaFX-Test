@@ -3,14 +3,25 @@
 
 <!-- Binds the java class (Controller), sets the prefHeight and prefWidth of the window -->
 <!-- Every FXML File has one only controller-->
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<!-- To Reference an ID through FXML you need to put a '$' before the id (if you need to reference an attribute then you need to enclose it in "{}" as well ) -->
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="net.davoleo.javafxtest.fxml.sample1.Controller" prefHeight="400.0" prefWidth="600.0">
 
 <!--  Controls -->
-    <Label>Hello World!</Label>
-    <Label text="Hello Label2"/>
+    <Label fx:id="label1">Hello World!</Label>
+    <Label text="${label1.text}"/>
     <Button fx:id="button" onAction="#handleButtonClick">Click Me</Button>
+
+<!--  Objects that will be reused go inside <fx:define>  -->
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroup"/>
+    </fx:define>
+
+    <Label text="Difficulty"/>
+    <RadioButton toggleGroup="$toggleGroup">Easy</RadioButton>
+    <RadioButton toggleGroup="$toggleGroup">Medium</RadioButton>
+    <RadioButton toggleGroup="$toggleGroup">Hard</RadioButton>
+
 
 </VBox>

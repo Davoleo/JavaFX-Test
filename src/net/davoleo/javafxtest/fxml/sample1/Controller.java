@@ -1,7 +1,11 @@
 package net.davoleo.javafxtest.fxml.sample1;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /*************************************************
  * Author: Davoleo
@@ -11,7 +15,7 @@ import javafx.scene.control.Button;
  * Copyright - © - Davoleo - 2019
  **************************************************/
 
-public class Controller {
+public class Controller implements Initializable {
 
     //Either public or annotated with @FXML
     @FXML
@@ -23,4 +27,10 @@ public class Controller {
         button.setText("Stop touching me!");
     }
 
+//    Always Called when the programs UI is loaded
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        System.out.println("Loading User Data");
+    }
 }
