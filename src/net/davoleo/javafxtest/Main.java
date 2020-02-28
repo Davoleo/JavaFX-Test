@@ -25,9 +25,11 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
         buttonAlert = new Button("AlertBox");
+        //Example of a lambda expression used as a handler for a specific action to do when a button is clicked
         buttonAlert.setOnAction(event -> SimpleAlertBox.display("SampleAlertBox", "WELCOME TO THE MALFORMED BOX!"));
 
         buttonConfirm = new Button("ConfirmBox");
+        //Example of a multi-line lambda expression
         buttonConfirm.setOnAction(event -> {
             boolean result = ConfirmBox.display("Title", "Are you sure you want to obliterate your computer?");
             System.out.println(result);
