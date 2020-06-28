@@ -22,13 +22,8 @@ public class CheckBoxGui extends Application {
     private Scene scene;
     private Button button;
 
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         primaryStage.setTitle("CheckBox");
 

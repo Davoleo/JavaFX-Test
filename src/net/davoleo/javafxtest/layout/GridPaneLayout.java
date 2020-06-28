@@ -22,7 +22,7 @@ import net.davoleo.javafxtest.box.SimpleAlertBox;
 public class GridPaneLayout extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         primaryStage.setTitle("Grid Pane");
 

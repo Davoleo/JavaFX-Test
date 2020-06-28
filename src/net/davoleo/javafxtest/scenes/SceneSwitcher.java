@@ -21,7 +21,7 @@ public class SceneSwitcher extends Application {
     private Scene scene1, scene2;
 
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         Label label1 = new Label("Welcome the the first scene!");
         Button button1 = new Button("Switch");

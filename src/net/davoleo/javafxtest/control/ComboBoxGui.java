@@ -22,13 +22,8 @@ public class ComboBoxGui extends Application {
     private Button button;
     private ComboBox<String> comboBox;
 
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         primaryStage.setTitle("Combobox!");
         button = new Button("Submit");

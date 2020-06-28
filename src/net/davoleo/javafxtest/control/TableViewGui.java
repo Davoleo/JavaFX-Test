@@ -28,13 +28,8 @@ public class TableViewGui extends Application {
     private TableView<Product> productsTable;
     TextField nameIn, priceIn, quantityIn;
 
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         primaryStage.setTitle("Table View!");
 

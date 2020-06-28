@@ -10,17 +10,22 @@ import java.io.IOException;
 
 public class Sample2 extends Application {
 
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) throws IOException
+    public void start(Stage primaryStage)
     {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("FXML Sample Num. 2");
-        primaryStage.setScene(new Scene(root, 800, 500));
-        primaryStage.show();
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (root != null) {
+            primaryStage.setTitle("FXML Sample Num. 2");
+            primaryStage.setScene(new Scene(root, 800, 500));
+            primaryStage.show();
+        }
     }
 }

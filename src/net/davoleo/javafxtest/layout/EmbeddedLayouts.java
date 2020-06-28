@@ -24,7 +24,7 @@ public class EmbeddedLayouts extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         primaryStage.setTitle("Embedded Layouts");
 

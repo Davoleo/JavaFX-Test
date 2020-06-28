@@ -24,13 +24,8 @@ public class ListViewGui extends Application {
     private Button button;
     private ListView<String> listView;
 
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         primaryStage.setTitle("List View!");
         button = new Button("Click Me");

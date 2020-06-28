@@ -23,7 +23,7 @@ public class HandlerTypes extends Application implements EventHandler<ActionEven
     private Button button, button2, button3;
 
     @Override
-    public void start(Stage primaryStage) throws Exception
+    public void start(Stage primaryStage)
     {
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("The Title!");
